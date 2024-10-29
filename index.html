@@ -5,21 +5,24 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Choisir mon équipe</title>
+    <title>Choisir ton équipe</title>
     <link rel="stylesheet" href="style.css">
 </head>
     
 <body>
-    <h1>Choisissez votre nom</h1>
+    <!-- Image ajoutée pour le site -->
+    <img src="dalkia (1).png" alt="Illustration d'accueil" class="responsive-image">
+
+    <h1>Bienvenue sur le site de sélection d'équipe !</h1>
+    <label for="nameSelect">Sélectionne ton nom :</label>
     <select id="nameSelect">
         <option value="">Sélectionne ton nom</option>
     </select>
     <button id="confirmButton" class="hidden">C'est moi !</button>
 
-    <div id="timer" class="hidden"></div>
-    <button id="teamButton" class="hidden">Je découvre mon équipe</button>
+    <p id="timer" class="hidden"></p>
+    <button id="teamButton" class="hidden">Découvrir mon équipe</button>
 
     <script src="script.js"></script>
 </body>
-    
 </html>
