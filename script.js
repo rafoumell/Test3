@@ -2,6 +2,9 @@ document.addEventListener("DOMContentLoaded", () => {
     // Créer des noms fictifs
     const names = Array.from({ length: 55 }, (_, i) => `nom${i + 1}`);
 
+    // Trier les noms par ordre alphabétique
+    names.sort((a, b) => a.localeCompare(b));
+
     // Répartition fixe des équipes
     const teamColors = {
         "nom1": "bleue",
@@ -19,7 +22,7 @@ document.addEventListener("DOMContentLoaded", () => {
         // Ajoute ici tous les noms jusqu'à nom55 avec leur couleur d'équipe
     };
 
-    // Remplir la liste déroulante
+    // Remplir la liste déroulante avec les noms triés
     const nameSelect = document.getElementById("nameSelect");
     names.forEach(name => {
         const option = document.createElement("option");
