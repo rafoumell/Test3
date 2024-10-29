@@ -86,8 +86,8 @@ document.addEventListener("DOMContentLoaded", () => {
                 return;
             }
 
-            const secondsLeft = Mathfloor((timeLeft/1000)%60);
-            const minutesLeft = Mathfloor((timeLeft/1000/60)%60);
+            const secondsLeft = Math.floor((timeLeft/1000)%60);
+            const minutesLeft = Math.floor((timeLeft/1000/60)%60);
             const hoursLeft = Math.floor((timeLeft/1000/3600)%60);
 
             timerDisplay.textContent = 'Temps restant : ${hoursLeft}h ${minutesLeft}m ${secondsLeft}s';
