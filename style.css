@@ -19,8 +19,32 @@ body {
     border-radius: 10px;
 }
 
-/* Style pour le menu déroulant et le bouton */
-select, button {
+/* Style commun pour les boutons */
+button {
+    background-color: #000; /* Fond noir */
+    color: #fff; /* Texte blanc */
+    font-family: Helvetica, Arial, sans-serif;
+    font-size: 1em;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px; /* Coins arrondis pour un style moderne */
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+/* Style pour le texte bleu par défaut des boutons sur iOS */
+button:focus {
+    outline: none;
+    color: #fff; /* Force le texte blanc même en cas de focus */
+}
+
+/* Effet au survol pour les écrans non tactiles */
+button:hover {
+    background-color: #333; /* Fond un peu plus clair au survol */
+}
+
+/* Style pour le menu déroulant et le timer */
+select, #timer {
     padding: 10px;
     margin: 10px;
     font-size: 1em;
@@ -30,7 +54,7 @@ select, button {
     display: none;
 }
 
-/* Timer */
+/* Style pour le timer */
 #timer {
     font-size: 1.2em;
     margin-top: 15px;
