@@ -1,20 +1,31 @@
 document.addEventListener("DOMContentLoaded", () => {
-    // Créer des noms fictifs
-    const names = ["Samuel", "Thomas", "Baptiste", "Alice"];
-
-    // Trier les noms par ordre alphabétique
+    // Liste de prénoms prédéfinie
+    const names = ["Lionel", "Thomas", "Sophie", "Alice", "Marie", "Jean", "Marc", "Luc", "Emma", "Paul", "Julie", "Nathalie", "Caroline", "Antoine", "Isabelle"];
+    
+    // Trier les prénoms par ordre alphabétique
     names.sort((a, b) => a.localeCompare(b));
 
-    // Répartition fixe des équipes
+    // Répartition fixe des équipes pour chaque prénom
     const teamColors = {
-        "Samuel": "bleue",
-        "Thomas": "bleue",
-        "Baptiste": "bleue",
-        "Alice": "rouge",
-        // Ajoute ici tous les noms jusqu'à nom55 avec leur couleur d'équipe
+        "Lionel": "bleue",
+        "Thomas": "rouge",
+        "Sophie": "jaune",
+        "Alice": "verte",
+        "Marie": "bleue",
+        "Jean": "rouge",
+        "Marc": "jaune",
+        "Luc": "verte",
+        "Emma": "bleue",
+        "Paul": "rouge",
+        "Julie": "jaune",
+        "Nathalie": "verte",
+        "Caroline": "bleue",
+        "Antoine": "rouge",
+        "Isabelle": "jaune",
+        // Ajoute d'autres prénoms et leurs couleurs ici
     };
 
-    // Remplir la liste déroulante avec les noms triés
+    // Remplir la liste déroulante avec les prénoms triés
     const nameSelect = document.getElementById("nameSelect");
     names.forEach(name => {
         const option = document.createElement("option");
@@ -28,7 +39,7 @@ document.addEventListener("DOMContentLoaded", () => {
     const teamButton = document.getElementById("teamButton");
     let selectedName = "";
 
-    // Gestion de la sélection du nom
+    // Gestion de la sélection du prénom
     nameSelect.addEventListener("change", (e) => {
         selectedName = e.target.value;
         if (selectedName) {
