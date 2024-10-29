@@ -2,22 +2,22 @@ document.addEventListener("DOMContentLoaded", () => {
     // Créer des noms fictifs
     const names = Array.from({ length: 55 }, (_, i) => `nom${i + 1}`);
 
-    // Mélanger les noms pour créer les équipes
-    const shuffledNames = names.sort(() => Math.random() - 0.5);
-    const teams = {
-        "bleue": [],
-        "rouge": [],
-        "jaune": [],
-        "verte": []
+    // Répartition fixe des équipes
+    const teamColors = {
+        "nom1": "bleue",
+        "nom8": "bleue",
+        "nom30": "bleue",
+        "nom22": "rouge",
+        "nom21": "rouge",
+        "nom7": "rouge",
+        "nom3": "jaune",
+        "nom12": "jaune",
+        "nom15": "jaune",
+        "nom5": "verte",
+        "nom13": "verte",
+        "nom17": "verte",
+        // Ajoute ici tous les noms jusqu'à nom55 avec leur couleur d'équipe
     };
-    let teamColors = {};
-
-    // Répartir les noms dans les équipes
-    for (let i = 0; i < shuffledNames.length; i++) {
-        const teamName = Object.keys(teams)[i % 4];
-        teams[teamName].push(shuffledNames[i]);
-        teamColors[shuffledNames[i]] = teamName;
-    }
 
     // Remplir la liste déroulante
     const nameSelect = document.getElementById("nameSelect");
@@ -67,9 +67,13 @@ document.addEventListener("DOMContentLoaded", () => {
     // Découverte de l'équipe
     teamButton.addEventListener("click", () => {
         const teamName = teamColors[selectedName];
-        document.body.style.backgroundColor = teamName === "bleue" ? "#3498db" :
-            teamName === "rouge" ? "#e74c3c" :
-            teamName === "jaune" ? "#f1c40f" : "#2ecc71";
+        const colors = {
+            "bleue": "#3498db",
+            "rouge": "#e74c3c",
+            "jaune": "#f1c40f",
+            "verte": "#2ecc71"
+        };
+        document.body.style.backgroundColor = colors[teamName];
         document.body.innerHTML = `<h1 style="color: white;">Vous êtes dans l'équipe ${teamName}!</h1>`;
     });
 });
