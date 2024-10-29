@@ -94,6 +94,10 @@ document.addEventListener("DOMContentLoaded", () => {
 
         }, 1000);
 
+        // Affiche le timer une fois le décompte commencé
+        timerDisplay.classList.remove("hidden");
+        timerDisplay.textContent = "Démarrage du timer...";
+
     }
 
     
