@@ -80,6 +80,6 @@ document.addEventListener("DOMContentLoaded", () => {
             "verte": "#2ecc71"
         };
         document.body.style.backgroundColor = colors[teamName];
-        document.body.innerHTML = `<h1 style="color: white;">Tu es dans l'équipe ${teamName}!</h1>`;
+        document.body.innerHTML = `<h1 style="color: white;">Tu es dans l'équipe ${teamName} !</h1>`;
     });
 });
