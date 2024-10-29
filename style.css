@@ -1,20 +1,53 @@
+/* Rendre la police Helvetica par défaut */
 body {
-    font-family: 'Helvetica', sans-serif;
+    font-family: Helvetica, Arial, sans-serif;
+    text-align: center;
+    margin: 0;
+    padding: 0;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    height: 100vh;
-    background-color: #f0f0f0;
-    transition: background-color 0.5s;
+    min-height: 100vh;
 }
 
+/* Style de l'image pour qu'elle soit responsive */
+.responsive-image {
+    max-width: 100%;
+    height: auto;
+    margin-bottom: 20px;
+    border-radius: 10px;
+}
+
+/* Style pour le menu déroulant et le bouton */
 select, button {
-    padding: 10px 20px;
+    padding: 10px;
     margin: 10px;
-    font-size: 16px;
+    font-size: 1em;
 }
 
 .hidden {
     display: none;
+}
+
+/* Timer */
+#timer {
+    font-size: 1.2em;
+    margin-top: 15px;
+}
+
+/* Style responsive pour les petits écrans */
+@media (max-width: 600px) {
+    h1 {
+        font-size: 1.5em;
+    }
+
+    select, button {
+        font-size: 1em;
+        padding: 8px;
+    }
+
+    #timer {
+        font-size: 1em;
+    }
 }
