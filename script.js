@@ -1,24 +1,16 @@
 document.addEventListener("DOMContentLoaded", () => {
     // Créer des noms fictifs
-    const names = Array.from({ length: 55 }, (_, i) => `nom${i + 1}`);
+    const names = ["Samuel", "Thomas", "Baptiste", "Alice"];
 
     // Trier les noms par ordre alphabétique
     names.sort((a, b) => a.localeCompare(b));
 
     // Répartition fixe des équipes
     const teamColors = {
-        "nom1": "bleue",
-        "nom8": "bleue",
-        "nom30": "bleue",
-        "nom22": "rouge",
-        "nom21": "rouge",
-        "nom7": "rouge",
-        "nom3": "jaune",
-        "nom12": "jaune",
-        "nom15": "jaune",
-        "nom5": "verte",
-        "nom13": "verte",
-        "nom17": "verte",
+        "Samuel": "bleue",
+        "Thomas": "bleue",
+        "Baptiste": "bleue",
+        "Alice": "rouge",
         // Ajoute ici tous les noms jusqu'à nom55 avec leur couleur d'équipe
     };
 
