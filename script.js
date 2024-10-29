@@ -54,21 +54,49 @@ document.addEventListener("DOMContentLoaded", () => {
     });
 
     // Timer de 20 secondes
+    //function startTimer() {
+        //let timeLeft = 20;
+        //timerDisplay.classList.remove("hidden");
+        //timerDisplay.textContent = `Temps restant: ${timeLeft} secondes`;
+
+        //const timerInterval = setInterval(() => {
+            //timeLeft--;
+            //timerDisplay.textContent = `Temps restant: ${timeLeft} secondes`;
+
+            //if (timeLeft <= 0) {
+                //clearInterval(timerInterval);
+                //teamButton.classList.remove("hidden");
+            //}
+        //}, 1000);
+    //}
+
+    // Fonction pour démarrer le timer jusqu'à une heure précise
     function startTimer() {
-        let timeLeft = 20;
-        timerDisplay.classList.remove("hidden");
-        timerDisplay.textContent = `Temps restant: ${timeLeft} secondes`;
+        const targetHour = new Date();
+        targetHour.setHours(17, 0, 0);                    // Définit l'heure cible à 17h00
 
         const timerInterval = setInterval(() => {
-            timeLeft--;
-            timerDisplay.textContent = `Temps restant: ${timeLeft} secondes`;
+            const now = new Date();
+            const timeLeft = targetHour - now;                    // Temps restant en millisecondes
 
-            if (timeLeft <= 0) {
+            if (timeLeft <=0 ) {
                 clearInterval(timerInterval);
+                timerDisplay.textContent = "Le temps est écoulé !";
                 teamButton.classList.remove("hidden");
+                return;
             }
+
+            const secondsLeft = Mathfloor((timeLeft/1000)%60);
+            const minutesLeft = Mathfloor((timeLeft/1000/60)%60);
+            const hoursLeft = Math.floor((timeLeft/1000/3600)%60);
+
+            timerDisplay.textContent = 'Temps restant : ${hoursLeft}h ${minutesLeft}m ${secondsLeft}s';
+
         }, 1000);
+
     }
+
+    
 
     // Découverte de l'équipe
     teamButton.addEventListener("click", () => {
